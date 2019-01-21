@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minWidth="315.0" prefHeight="650.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GUIController">
+   <children>
+      <AnchorPane fx:id="allTagsPane" layoutX="200.0" layoutY="80.0" prefHeight="471.0" prefWidth="628.0">
+         <children>
+            <ListView fx:id="allTagsList" layoutX="76.0" layoutY="56.0" prefHeight="395.0" prefWidth="238.0" />
+            <Button layoutX="390.0" layoutY="25.0" mnemonicParsing="false" onAction="#returnButtonClick" prefHeight="63.0" prefWidth="125.0" text="Return" />
+            <Button fx:id="allTagsDeleteButton" layoutX="356.0" layoutY="236.0" mnemonicParsing="false" onAction="#allTagsDeleteButtonClick" prefHeight="63.0" prefWidth="159.0" text="Delete Selected Tag" />
+            <TextField fx:id="allTagsTextbox" layoutX="356.0" layoutY="342.0" prefHeight="31.0" prefWidth="159.0" />
+            <Button fx:id="allTagsAddButton" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" onAction="#allTagsAddButtonClick" prefHeight="63.0" prefWidth="159.0" text="Add to tags" />
+            <Label layoutX="76.0" layoutY="24.0" text="All existing tags:" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="newFolderPane" layoutX="282.0" layoutY="282.0" minHeight="110.0" prefHeight="110.0" prefWidth="476.0">
+         <children>
+            <TextField fx:id="newFolderText" layoutX="14.0" layoutY="43.0" prefHeight="22.0" prefWidth="447.0" promptText="file name" />
+            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Folder Name" />
+            <Button fx:id="newFolderOkButton" layoutX="14.0" layoutY="71.0" mnemonicParsing="false" onAction="#newFolderOkButtonClick" prefHeight="25.0" prefWidth="226.0" text="Ok" />
+            <Button fx:id="newFolderCancelButton" layoutX="240.0" layoutY="71.0" mnemonicParsing="false" onAction="#newFolderCancelButtonClick" prefHeight="25.0" prefWidth="220.0" text="Cancel" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="displayPane" layoutX="-2.0" prefHeight="650.0" prefWidth="1019.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d0ff1f" height="49.0" layoutX="11.0" layoutY="109.0" opacity="0.05" stroke="BLACK" strokeType="INSIDE" width="226.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="80.0" layoutX="14.0" layoutY="13.0" opacity="0.05" stroke="BLACK" strokeType="INSIDE" width="990.0" />
+            <ScrollPane layoutX="245.0" layoutY="98.0" prefHeight="531.0" prefWidth="752.0">
+               <content>
+                  <AnchorPane prefHeight="497.0" prefWidth="727.0">
+                     <children>
+                        <GridPane fx:id="gridPane" alignment="CENTER" hgap="20.0" layoutY="3.0" maxHeight="523.0" maxWidth="709.0" minHeight="523.0" minWidth="673.0" prefHeight="523.0" prefWidth="709.0" vgap="20.0">
+                          <columnConstraints>
+                            <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <Button fx:id="backButton" layoutX="245.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButtonClick" text="Back" />
+            <Button fx:id="newFolder" layoutX="310.0" layoutY="22.0" mnemonicParsing="false" onAction="#newFolderButtonClick" prefHeight="31.0" prefWidth="150.0" text="Create New Folder" />
+            <TextField fx:id="searchTextbox" layoutX="783.0" layoutY="22.0" prefHeight="31.0" prefWidth="141.0" promptText="Search Image tags" />
+            <Button fx:id="searchButton" layoutX="933.0" layoutY="22.0" mnemonicParsing="false" onAction="#searchButtonClick" text="Search" />
+            <TextField fx:id="filePathTextbox" layoutX="245.0" layoutY="59.0" prefHeight="31.0" prefWidth="638.0" />
+            <Button fx:id="goToPathButton" layoutX="891.0" layoutY="59.0" mnemonicParsing="false" onAction="#goToPathButtonClick" prefHeight="31.0" prefWidth="107.0" text="GO/Refresh" />
+            <Button fx:id="findImageButton" layoutX="621.0" layoutY="22.0" mnemonicParsing="false" onAction="#findImageButtonClick" text="Find image with OS" />
+            <ListView fx:id="imageList" layoutX="8.0" layoutY="199.0" prefHeight="430.0" prefWidth="231.0" />
+            <Label layoutX="174.0" layoutY="64.0" text="Location" />
+            <Button fx:id="dropButton" layoutX="509.0" layoutY="22.0" mnemonicParsing="false" onAction="#dropButtonClick" text="Drop Image" />
+            <Button fx:id="listImageButton" layoutX="8.0" layoutY="166.0" mnemonicParsing="false" onAction="#listImageButtonClick" prefHeight="31.0" prefWidth="119.0" text="List all images:" />
+            <Button fx:id="viewLogButton" layoutX="145.0" layoutY="118.0" mnemonicParsing="false" onAction="#readLogClick" text="View log" />
+            <Button layoutX="56.0" layoutY="22.0" mnemonicParsing="false" onAction="#sortButtonClick" text="Sort Images into folders" />
+            <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" onAction="#manageTagsButtonClick" text="Manage all tags" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="imagePane" layoutX="235.0" layoutY="50.0" minHeight="500.0" prefHeight="595.0" prefWidth="752.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="137.0" layoutX="42.0" layoutY="456.0" opacity="0.05" stroke="BLACK" strokeType="INSIDE" width="713.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1ff2ff" height="262.0" layoutX="503.0" layoutY="161.0" opacity="0.05" stroke="BLACK" strokeType="INSIDE" width="226.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="110.0" layoutX="511.0" layoutY="34.0" opacity="0.05" stroke="BLACK" strokeType="INSIDE" width="226.0" />
+            <ImageView fx:id="myImage" fitHeight="423.0" fitWidth="483.0" layoutX="4.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <Button fx:id="addTagButton" layoutX="332.0" layoutY="544.0" mnemonicParsing="false" text="Add Tag" />
+            <Button fx:id="deleteButton" layoutX="515.0" layoutY="101.0" mnemonicParsing="false" onAction="#deleteButtonClick" prefHeight="31.0" prefWidth="211.0" text="Delete Image" />
+            <Button fx:id="returnButton" layoutX="629.0" layoutY="44.0" mnemonicParsing="false" onAction="#returnButtonClick" prefHeight="49.0" prefWidth="96.0" text="Return" />
+            <ComboBox fx:id="comboBox" layoutX="170.0" layoutY="544.0" prefWidth="150.0" promptText="&lt;Add New&gt;" />
+            <Button fx:id="saveButton" layoutX="628.0" layoutY="540.0" mnemonicParsing="false" onAction="#initialize" prefHeight="49.0" prefWidth="121.0" text="Save Changes" />
+            <Button fx:id="clearButton" layoutX="491.0" layoutY="540.0" mnemonicParsing="false" onAction="#initialize" prefHeight="49.0" prefWidth="121.0" text="Clear Changes" />
+            <ListView fx:id="tagList" layoutX="511.0" layoutY="202.0" prefHeight="166.0" prefWidth="200.0" />
+            <Button fx:id="moveButton" layoutX="515.0" layoutY="44.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" text="Move" />
+            <Label layoutX="513.0" layoutY="167.0" text="Historical Tags:" />
+            <Label layoutX="62.0" layoutY="483.0" text="Tags:" />
+            <Button fx:id="revertButton" layoutX="613.0" layoutY="379.0" mnemonicParsing="false" text="Revert Tags" />
+            <GridPane fx:id="existingTagsGrid" hgap="20.0" layoutX="171.0" layoutY="452.0" prefHeight="21.0" prefWidth="65.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <ScrollPane layoutX="109.0" layoutY="462.0" prefHeight="63.0" prefWidth="638.0">
+              <content>
+                <AnchorPane fx:id="tempTagsPane" minHeight="0.0" minWidth="0.0" prefHeight="44.0" prefWidth="106.0">
+                     <children>
+                        <GridPane fx:id="tempTagsGrid" hgap="20.0" layoutY="12.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="90.0" prefHeight="21.0" prefWidth="90.0">
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Label fx:id="absolutePath" layoutX="47.0" layoutY="7.0" text="path" textFill="#6e6c6c" textOverrun="WORD_ELLIPSIS" />
+            <Button layoutX="503.0" layoutY="423.0" mnemonicParsing="false" onAction="#quickHelpButtonClick" text="Quick help" />
+            <Label layoutX="9.0" layoutY="7.0" text="Path:" textFill="#6e6c6c" underline="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
