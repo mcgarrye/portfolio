@@ -1,4 +1,4 @@
-#photo manager
+#photo manager ~ phase2
 This project uses Java and Javascript to create a photo manager application. It has many funtions including, adding, deleting,
 and moving photos. You can also tag photos as well as create folders for storing. There is also a feature to list all photos
 that exist below your current directoy. There is both a gui application or it can be used in the terminal as well. If you would
